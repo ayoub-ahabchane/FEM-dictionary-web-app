@@ -8,6 +8,6 @@
   }
 
   body {
-    @apply h-full;
+    @apply h-full transition-colors duration-300 dark:bg-primary-600 dark:text-white;
   }
 }

@@ -5,9 +5,12 @@ export const ThemeContext = createContext();
 
 const ThemeContextProvider = ({ children }) => {
   const [themeFont, setThemeFont] = useLocalStorage("theme-font", "sans");
+  const [themeColor, setThemeColor] = useLocalStorage("theme-color", "light");
 
   return (
-    <ThemeContext.Provider value={{ themeFont, setThemeFont }}>
+    <ThemeContext.Provider
+      value={{ themeFont, setThemeFont, themeColor, setThemeColor }}
+    >
       {children}
     </ThemeContext.Provider>
   );

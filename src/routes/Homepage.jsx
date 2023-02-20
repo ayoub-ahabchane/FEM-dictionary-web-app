@@ -3,7 +3,6 @@ import { ThemeContext } from "../store/context/ThemeCtx";
 
 const Homepage = () => {
   const { themeFont } = useContext(ThemeContext);
-  console.log(themeFont);
   return <div className={`font-${themeFont}`}>Homepage</div>;
 };
 

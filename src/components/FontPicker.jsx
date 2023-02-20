@@ -32,7 +32,6 @@ const FontPicker = () => {
     };
   });
 
-  console.log(isRevealed);
   return (
     <div className="relative text-sm font-bold md:text-lg">
       <button
@@ -58,7 +57,7 @@ const FontPicker = () => {
       {isRevealed && (
         <div
           ref={optionsRef}
-          className="absolute -bottom-[150px] right-0 flex w-44 flex-col gap-4 rounded-2xl border bg-white p-6 shadow-lg md:-bottom-44"
+          className="absolute -bottom-[150px] right-0 flex w-44 flex-col gap-4 rounded-2xl border bg-white p-6 shadow-lg dark:border-primary-400 dark:bg-primary-600 dark:text-white dark:shadow-accent md:-bottom-44"
         >
           <button
             onClick={() => {
