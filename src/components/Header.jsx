@@ -6,7 +6,7 @@ import Logo from "./Logo";
 
 const Header = () => {
   return (
-    <header className="mb-6 font-sans md:mb-11">
+    <header className="mb-11 font-sans md:mb-11">
       <div className="mb-6 flex h-6 items-center justify-between md:mb-14">
         <Logo />
         <div className="flex gap-4">
