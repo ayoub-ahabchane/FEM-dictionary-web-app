@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../store/context/ThemeCtx";
 
 const Homepage = () => {
-  return <div>Homepage</div>;
+  const { themeFont } = useContext(ThemeContext);
+  console.log(themeFont);
+  return <div className={`font-${themeFont}`}>Homepage</div>;
 };
 
 export default Homepage;
