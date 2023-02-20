@@ -7,9 +7,9 @@ import Logo from "./Logo";
 const Header = () => {
   return (
     <header className="mb-11 font-sans md:mb-11">
-      <div className="mb-6 flex h-6 items-center justify-between md:mb-14">
+      <div className="mb-6 flex h-8 items-center justify-between md:mb-14">
         <Logo />
-        <div className="flex gap-4">
+        <div className="flex gap-4 md:gap-6">
           <FontPicker />
           <div className="w-px bg-secondary-300" aria-hidden></div>
           <ThemeToggle />

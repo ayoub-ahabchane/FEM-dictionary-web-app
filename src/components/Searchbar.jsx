@@ -22,9 +22,10 @@ const Searchbar = () => {
           setIsValid(false);
           return;
         } else {
+          const param = word.toLowerCase();
           inputRef.current.blur();
           setWord("");
-          return navigate(`definition/${word}`);
+          return navigate(`definition/${param}`);
         }
       }}
     >
@@ -63,7 +64,7 @@ const Searchbar = () => {
       </button>
       {!isValid && (
         <p className="absolute left-0 -bottom-8 text-danger">
-          Woops! Can't be empty...
+          Woops! can't be empty...
         </p>
       )}
     </form>
