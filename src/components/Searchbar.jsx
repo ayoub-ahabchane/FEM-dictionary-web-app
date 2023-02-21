@@ -1,10 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { Form, redirect, useNavigate } from "react-router-dom";
+import { ThemeContext } from "../store/context/ThemeCtx";
 
 const Searchbar = () => {
-  const [word, setWord] = useState("");
   const [isValid, setIsValid] = useState(true);
   const inputRef = useRef();
+  const { word, setWord } = useContext(ThemeContext);
   const navigate = useNavigate();
 
   useEffect(() => {

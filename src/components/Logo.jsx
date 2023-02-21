@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, redirect } from "react-router-dom";
+import { ThemeContext } from "../store/context/ThemeCtx";
 
 const Logo = () => {
+  const { setWord } = useContext(ThemeContext);
+
   return (
-    <Link to={"/"}>
+    <Link
+      to={"/"}
+      onClick={() => {
+        setWord("");
+      }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 34 38"
