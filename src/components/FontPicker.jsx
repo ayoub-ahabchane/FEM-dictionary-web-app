@@ -67,14 +67,14 @@ const FontPicker = () => {
               toggle();
             }
           }}
-          className="absolute -bottom-[150px] right-0 z-10 flex w-44 flex-col gap-4 rounded-2xl border bg-white p-6 shadow-lg dark:border-primary-400 dark:bg-primary-600 dark:text-white dark:shadow-accent md:-bottom-44"
+          className="absolute -bottom-[150px] right-0 z-10 flex w-44 flex-col gap-4 rounded-2xl border bg-white p-6 shadow-lg dark:border-primary-400 dark:bg-primary-600 dark:text-white dark:shadow-[0_10px_15px_-3px_rgba(164,69,237,0.5),0_4px_6px_-4px_rgba(164,69,237,0.5)] md:-bottom-44"
         >
           <button
             onClick={() => {
               setThemeFont("sans");
               toggle();
             }}
-            className="text-left font-sans transition-colors duration-300 focus-within:text-accent hover:text-accent"
+            className="text-left font-sans  transition-colors duration-300 focus-within:text-accent hover:text-accent"
           >
             Sans serif
           </button>

@@ -24,7 +24,6 @@ const Searchbar = () => {
         } else {
           const param = word.toLowerCase();
           inputRef.current.blur();
-          setWord("");
           return navigate(`definition/${param}`);
         }
       }}
@@ -33,7 +32,7 @@ const Searchbar = () => {
         ref={inputRef}
         type="text"
         placeholder="Search for any word..."
-        className="dark grow bg-transparent font-bold outline-none transition-all duration-300 placeholder:text-primary-400 placeholder:text-opacity-25 dark:placeholder:text-white dark:placeholder:text-opacity-25 md:text-xl"
+        className="dark grow bg-transparent font-bold outline-none transition-colors duration-300 placeholder:text-primary-400 placeholder:text-opacity-25 placeholder:transition-colors placeholder:duration-300 dark:placeholder:text-white dark:placeholder:text-opacity-25 md:text-xl"
         value={word}
         onChange={(e) => {
           setWord(e.target.value);

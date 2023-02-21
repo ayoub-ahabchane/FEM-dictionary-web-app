@@ -13,13 +13,18 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        index: true,
-        element: <Homepage />,
-      },
-      {
-        path: "/definition/:word",
-        element: <Result />,
-        loader: resultLoader,
+        errorElement: <h1>Woopsie!</h1>,
+        children: [
+          {
+            index: true,
+            element: <Homepage />,
+          },
+          {
+            path: "/definition/:word",
+            element: <Result />,
+            loader: resultLoader,
+          },
+        ],
       },
     ],
   },
