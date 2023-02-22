@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
-import { Form, redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../store/context/ThemeCtx";
 
 const Searchbar = () => {
@@ -11,6 +11,8 @@ const Searchbar = () => {
   useEffect(() => {
     word && setIsValid(true);
   }, [word]);
+
+  // TODO: Framer motion
 
   return (
     <form
@@ -33,7 +35,7 @@ const Searchbar = () => {
         ref={inputRef}
         type="text"
         placeholder="Search for any word..."
-        className="dark grow bg-transparent font-bold outline-none transition-colors duration-300 placeholder:text-primary-400 placeholder:text-opacity-25 placeholder:transition-colors placeholder:duration-300 dark:placeholder:text-white dark:placeholder:text-opacity-25 md:text-xl"
+        className="dark grow bg-transparent font-bold caret-accent outline-none transition-colors duration-300 placeholder:text-primary-400 placeholder:text-opacity-25 placeholder:transition-colors placeholder:duration-300 dark:placeholder:text-white dark:placeholder:text-opacity-25 md:text-xl"
         value={word}
         onChange={(e) => {
           setWord(e.target.value);
