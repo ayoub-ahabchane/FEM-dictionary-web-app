@@ -7,6 +7,7 @@ const ThemeToggle = () => {
   return (
     <div className="flex items-center gap-3 md:gap-5">
       <button
+        title={`Switch to ${themeColor === "dark" ? "light" : "dark"} mode`}
         className="relative flex h-5 w-10 items-center rounded-xl bg-secondary-400 transition-colors duration-300 dark:bg-accent"
         onClick={() => {
           if (themeColor === "dark") {

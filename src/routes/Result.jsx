@@ -19,7 +19,13 @@ const Result = () => {
     const { title } = result;
     return <p>{title}</p>;
   } else {
-    const { word, phonetic, meanings, sourceUrls } = result;
+    const { word, phonetic, phonetics, meanings, sourceUrls } = result;
+    const audio = phonetics.find((item) => item.audio)
+      ? new Audio(phonetics.find((item) => item.audio).audio)
+      : null;
+
+    console.log(audio);
+
     return (
       <>
         <div className="mb-7 flex items-center justify-between md:mb-10">
@@ -31,7 +37,14 @@ const Result = () => {
               {phonetic}
             </p>
           </div>
-          <button className="inline-block h-12 w-12 shrink-0 rounded-full md:h-[75px] md:w-[75px]">
+          <button
+            disabled={audio === true}
+            title={audio ? `Listen to the pronunciation` : "Audio unavailable"}
+            className="inline-block h-12 w-12 shrink-0 rounded-full md:h-[75px] md:w-[75px]"
+            onClick={() => {
+              audio && audio.play();
+            }}
+          >
             <svg
               className="h-12 w-12 md:h-[75px] md:w-[75px]"
               xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +62,7 @@ const Result = () => {
         {meanings.map(({ partOfSpeech, definitions, synonyms }) => {
           return (
             <section key={Math.random()} className="mb-7 md:mb-10">
-              <h2 className="mb-7 flex items-center gap-4 text-lg font-bold italic after:inline-block after:h-px after:w-full after:bg-secondary-300 after:transition-colors after:duration-300 after:content-[''] dark:after:bg-primary-300 md:mb-10 md:text-2xl">
+              <h2 className="mb-7 flex items-center gap-4 whitespace-nowrap text-lg font-bold italic after:inline-block after:h-px after:w-full after:bg-secondary-300 after:transition-colors after:duration-300 after:content-[''] dark:after:bg-primary-300 md:mb-10 md:text-2xl">
                 {partOfSpeech}
               </h2>
 
@@ -78,13 +91,18 @@ const Result = () => {
                 </ul>
               </article>
               {synonyms.length > 0 && (
-                <article className="mb-6 flex gap-6 md:mb-10">
-                  <h3 className="text-secondary-400 md:text-xl">Synonyms</h3>
+                <article className="mb-6  md:mb-10">
+                  <h3 className="mr-4 mb-4 inline-block text-secondary-400 md:text-xl">
+                    Synonyms
+                  </h3>
                   {synonyms.map((synonym) => {
                     return (
-                      <p key={Math.random()} className="font-bold text-accent">
+                      <span
+                        key={Math.random()}
+                        className="mr-4 mb-4 inline-block font-bold text-accent"
+                      >
                         {synonym}
-                      </p>
+                      </span>
                     );
                   })}
                 </article>
