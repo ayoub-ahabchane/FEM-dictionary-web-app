@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="mx-auto flex h-full max-w-3xl flex-col px-6 pt-6 md:px-10 md:pt-14">
       <Header />
-      <main className={`font-${themeFont} pb-16 pt-44 md:pt-56`}>
+      <main className={`font-${themeFont} pb-10 pt-44 md:pt-60`}>
         {navigation.state === "loading" ? "loading" : <Outlet />}
       </main>
     </div>
