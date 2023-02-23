@@ -1,8 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../store/context/ThemeCtx";
+import { motion } from "framer-motion";
 
 const ThemeToggle = () => {
   const { themeColor, setThemeColor } = useContext(ThemeContext);
+  const [position, setPosition] = useState(
+    themeColor === "light" ? "left" : "right"
+  );
+
+  useEffect(() => {
+    if (themeColor === "light") {
+      setPosition("left");
+    } else {
+      setPosition("right");
+    }
+  }, [themeColor]);
 
   return (
     <div className="flex items-center gap-3 md:gap-5">
@@ -17,11 +29,13 @@ const ThemeToggle = () => {
           }
         }}
       >
-        <span
-          className={`absolute h-3.5 w-3.5 ${
-            themeColor === "dark" ? "right-[3px]" : "left-[3px]"
-          } rounded-full bg-white`}
-        ></span>
+        <motion.span
+          animate={position}
+          variants={toggleVariants}
+          initial={false}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className={`absolute h-3.5 w-3.5 rounded-full bg-white`}
+        ></motion.span>
       </button>
       <svg
         className="stroke-secondary-400 transition-colors duration-300 dark:stroke-accent"
@@ -40,6 +54,15 @@ const ThemeToggle = () => {
       </svg>
     </div>
   );
+};
+
+const toggleVariants = {
+  left: {
+    left: "3px",
+  },
+  right: {
+    right: "3px",
+  },
 };
 
 export default ThemeToggle;

@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-
+import { motion } from "framer-motion";
 export const loader = async ({ params }) => {
   const word = params.word;
   const res = await fetch(
@@ -17,7 +17,7 @@ const Result = () => {
 
   if (status === 404) {
     const { title } = result;
-    return <p>{title}</p>;
+    return <motion.p key={"notfound"}>{title}</motion.p>;
   } else {
     const { word, phonetic, phonetics, meanings, sourceUrls } = result;
     const audio = phonetics.find((item) => item.audio)
@@ -27,7 +27,13 @@ const Result = () => {
     console.log(audio);
 
     return (
-      <>
+      <motion.div
+        key={"result"}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6, ease: "easeIn" }}
+      >
         <div className="mb-7 flex items-center justify-between md:mb-10">
           <div className="grow">
             <h1 className="mb-2 text-3xl font-bold capitalize md:text-6xl md:leading-tight">
@@ -133,7 +139,7 @@ const Result = () => {
             </section>
           );
         })}
-      </>
+      </motion.div>
     );
   }
 };

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../store/context/ThemeCtx";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Searchbar = () => {
   const [isValid, setIsValid] = useState(true);
@@ -64,11 +65,20 @@ const Searchbar = () => {
           />
         </svg>
       </button>
-      {!isValid && (
-        <p className="absolute left-0 -bottom-8 text-danger">
-          Woops! can't be empty...
-        </p>
-      )}
+      <AnimatePresence>
+        {!isValid && (
+          <motion.p
+            key={"warning"}
+            className="absolute left-0 -bottom-8 text-danger"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0 }}
+          >
+            Woops! can't be empty...
+          </motion.p>
+        )}
+      </AnimatePresence>
     </form>
   );
 };
