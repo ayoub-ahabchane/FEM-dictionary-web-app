@@ -6,7 +6,9 @@
   html {
     @apply h-full;
   }
-
+  #root {
+    @apply h-full;
+  }
   body {
     @apply h-full transition-colors duration-300 dark:bg-primary-600 dark:text-white md:text-lg;
   }
