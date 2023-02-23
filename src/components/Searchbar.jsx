@@ -36,7 +36,7 @@ const Searchbar = () => {
         ref={inputRef}
         type="text"
         placeholder="Search for any word..."
-        className="dark grow bg-transparent font-bold caret-accent outline-none transition-colors duration-300 placeholder:text-primary-400 placeholder:text-opacity-25 placeholder:transition-colors placeholder:duration-300 dark:placeholder:text-white dark:placeholder:text-opacity-25 md:text-xl"
+        className="dark w-full grow bg-transparent font-bold caret-accent outline-none transition-colors duration-300 placeholder:text-primary-400 placeholder:text-opacity-25 placeholder:transition-colors placeholder:duration-300 dark:placeholder:text-white dark:placeholder:text-opacity-25 md:text-xl"
         value={word}
         onChange={(e) => {
           setWord(e.target.value);
@@ -48,7 +48,7 @@ const Searchbar = () => {
           setIsValid(true);
         }}
       />
-      <button role="button" type="submit">
+      <button className="shrink-0" role="button" type="submit">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"

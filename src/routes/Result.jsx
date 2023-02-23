@@ -93,9 +93,7 @@ const Result = () => {
                         <div>
                           <p>{definition}</p>
                           {example && (
-                            <p className="mt-3 text-secondary-400">
-                              {`“${example}”`}
-                            </p>
+                            <q className="mt-3 text-secondary-400">{example}</q>
                           )}
                         </div>
                       </li>
