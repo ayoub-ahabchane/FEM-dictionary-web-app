@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { motion } from "framer-motion";
+import NotFound from "./NotFound";
 export const loader = async ({ params }) => {
   const word = params.word;
   const res = await fetch(
@@ -18,7 +19,7 @@ const Result = () => {
   if (status === 404) {
     const { title } = result;
     document.title = title;
-    return <motion.p key={"notfound"}>{title}</motion.p>;
+    return <NotFound result={result} />;
   } else {
     const { word, phonetic, phonetics, meanings, sourceUrls } = result;
     const audio = phonetics.find((item) => item.audio)

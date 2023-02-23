@@ -30,7 +30,7 @@ function App() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeIn" }}
-              className="animate-pulse"
+              className="animate-pulse text-center"
             >
               Loading...
             </motion.p>
