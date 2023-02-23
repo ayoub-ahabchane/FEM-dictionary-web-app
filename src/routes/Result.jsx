@@ -17,6 +17,7 @@ const Result = () => {
 
   if (status === 404) {
     const { title } = result;
+    document.title = title;
     return <motion.p key={"notfound"}>{title}</motion.p>;
   } else {
     const { word, phonetic, phonetics, meanings, sourceUrls } = result;
@@ -24,7 +25,11 @@ const Result = () => {
       ? new Audio(phonetics.find((item) => item.audio).audio)
       : null;
 
-    console.log(audio);
+    const firstletter = word.charAt(0).toUpperCase();
+    const restOfWord = word.slice(1);
+    const capitalizedWord = firstletter + restOfWord;
+    console.log(capitalizedWord);
+    document.title = `${capitalizedWord} | Dictionnary`;
 
     return (
       <motion.div

@@ -8,7 +8,6 @@ const FontPicker = () => {
   const [isRevealed, toggle] = useToggle(false);
   const optionsRef = useRef();
   const toggleRef = useRef();
-  const [visibility, setVisibility] = useState("invisible");
 
   const fontName =
     themeFont === "sans"
@@ -38,6 +37,7 @@ const FontPicker = () => {
     <div className="relative text-sm font-bold md:text-lg">
       <button
         ref={toggleRef}
+        title="Change the display font"
         onKeyDown={(e) => {
           if (e.key === "Escape" && isRevealed) {
             toggle();

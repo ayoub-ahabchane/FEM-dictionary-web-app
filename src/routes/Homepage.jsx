@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ThemeContext } from "../store/context/ThemeCtx";
 import { motion } from "framer-motion";
 
 const Homepage = () => {
-  const { themeFont } = useContext(ThemeContext);
+  const { themeFont, setWord } = useContext(ThemeContext);
+  useEffect(() => {
+    document.title = "Frontend Mentor Dictionary";
+    setWord("");
+  }, []);
   return (
     <motion.p
       key={"homepage"}

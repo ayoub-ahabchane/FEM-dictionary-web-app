@@ -3,15 +3,8 @@ import { Link, redirect } from "react-router-dom";
 import { ThemeContext } from "../store/context/ThemeCtx";
 
 const Logo = () => {
-  const { setWord } = useContext(ThemeContext);
-
   return (
-    <Link
-      to={"/"}
-      onClick={() => {
-        setWord("");
-      }}
-    >
+    <Link to={"/"}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 34 38"
