@@ -28,7 +28,7 @@ const Result = () => {
     const firstletter = word.charAt(0).toUpperCase();
     const restOfWord = word.slice(1);
     const capitalizedWord = firstletter + restOfWord;
-    console.log(capitalizedWord);
+
     document.title = `${capitalizedWord} | Dictionnary`;
 
     return (
@@ -49,9 +49,10 @@ const Result = () => {
             </p>
           </div>
           <button
-            disabled={audio === true}
             title={audio ? `Listen to the pronunciation` : "Audio unavailable"}
-            className="inline-block h-12 w-12 shrink-0 rounded-full md:h-[75px] md:w-[75px]"
+            className={`inline-block h-12 w-12 shrink-0 rounded-full md:h-[75px]  md:w-[75px] ${
+              audio ? "cursor-pointer" : "cursor-not-allowed"
+            }`}
             onClick={() => {
               audio && audio.play();
             }}
@@ -63,7 +64,7 @@ const Result = () => {
               height="75"
               viewBox="0 0 75 75"
             >
-              <g fill="#A445ED" fillRule="evenodd">
+              <g fill={audio ? "#A445ED" : "#757575"} fillRule="evenodd">
                 <circle cx="37.5" cy="37.5" r="37.5" opacity=".25" />
                 <path d="M29 27v21l21-10.5z" />
               </g>
