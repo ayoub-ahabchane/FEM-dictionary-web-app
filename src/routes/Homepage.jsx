@@ -32,7 +32,7 @@ const Homepage = () => {
       </a>
       <img
         className="order-1 mb-11 block aspect-square w-16 bg-contain"
-        src="../src/assets/emoji_open_book.png"
+        src="../public/assets/emoji_open_book.png"
       ></img>
     </motion.section>
   );
