@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import confusedFace from "../assets/emoji_confused_face.png";
 
 const NotFound = ({ result: { title, message, resolution } }) => {
   return (
@@ -17,7 +18,7 @@ const NotFound = ({ result: { title, message, resolution } }) => {
       </p>
       <img
         className="order-1 mb-11 block aspect-square w-16 bg-contain"
-        src="../public/assets/emoji_confused_face.png"
+        src={confusedFace}
       ></img>
     </motion.section>
   );

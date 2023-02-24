@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ThemeContext } from "../store/context/ThemeCtx";
 import { motion } from "framer-motion";
+import openBook from "../assets/emoji_open_book.png";
 
 const Homepage = () => {
   const { themeFont, setWord } = useContext(ThemeContext);
@@ -32,7 +33,7 @@ const Homepage = () => {
       </a>
       <img
         className="order-1 mb-11 block aspect-square w-16 bg-contain"
-        src="../public/assets/emoji_open_book.png"
+        src={openBook}
       ></img>
     </motion.section>
   );

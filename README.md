@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot for the dictionary web app solution](./public/assets/screenshot_20230224123103.png)
+![Screenshot for the dictionary web app solution](./src/assets/screenshot_20230224123103.png)
 
 ### Links
 
