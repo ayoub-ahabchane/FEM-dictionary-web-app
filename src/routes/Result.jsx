@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { easeIn, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import NotFound from "./NotFound";
 import { useState } from "react";
 export const loader = async ({ params }) => {

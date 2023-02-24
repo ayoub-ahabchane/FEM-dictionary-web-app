@@ -1,6 +1,6 @@
 import { ThemeContext } from "../store/context/ThemeCtx";
 import useToggle from "../store/hooks/useToggle";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const FontPicker = () => {

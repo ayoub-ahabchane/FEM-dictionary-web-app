@@ -15,7 +15,6 @@ const Homepage = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3, ease: "easeIn" }}
-      // className={`font-${themeFont} `}
       className="flex flex-col items-center pt-10 text-center"
     >
       <h1 className="order-2 mb-6 text-xl font-bold">
