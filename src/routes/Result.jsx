@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
-import { motion } from "framer-motion";
+import { easeIn, motion } from "framer-motion";
 import NotFound from "./NotFound";
+import { useState } from "react";
 export const loader = async ({ params }) => {
   const word = params.word;
   const res = await fetch(
@@ -15,6 +16,7 @@ export const loader = async ({ params }) => {
 
 const Result = () => {
   const { status, result } = useLoaderData();
+  const [buttonState, setButtonState] = useState("idle");
 
   if (status === 404) {
     const { title } = result;
@@ -52,10 +54,24 @@ const Result = () => {
           <button
             title={audio ? `Listen to the pronunciation` : "Audio unavailable"}
             className={`inline-block h-12 w-12 shrink-0 rounded-full md:h-[75px]  md:w-[75px] ${
-              audio ? "cursor-pointer" : "cursor-not-allowed"
-            }`}
+              audio
+                ? "cursor-pointer fill-accent"
+                : "cursor-not-allowed fill-secondary-400"
+            } `}
             onClick={() => {
               audio && audio.play();
+            }}
+            onMouseEnter={() => {
+              setButtonState("hovered");
+            }}
+            onFocus={() => {
+              setButtonState("hovered");
+            }}
+            onMouseLeave={() => {
+              setButtonState("idle");
+            }}
+            onBlur={() => {
+              setButtonState("idle");
             }}
           >
             <svg
@@ -65,9 +81,29 @@ const Result = () => {
               height="75"
               viewBox="0 0 75 75"
             >
-              <g fill={audio ? "#A445ED" : "#757575"} fillRule="evenodd">
-                <circle cx="37.5" cy="37.5" r="37.5" opacity=".25" />
-                <path d="M29 27v21l21-10.5z" />
+              <g>
+                <circle
+                  cx="37.5"
+                  cy="37.5"
+                  r="37.5"
+                  className={`${
+                    audio && buttonState === "idle"
+                      ? "opacity-25"
+                      : audio && buttonState === "hovered"
+                      ? "opacity-100"
+                      : null
+                  } transition-all duration-300`}
+                />
+                <path
+                  d="M29 27v21l21-10.5z"
+                  className={`opacity-100 ${
+                    audio && buttonState === "idle"
+                      ? "fill-accent"
+                      : audio && buttonState === "hovered"
+                      ? "fill-white"
+                      : "fill-secondary-300"
+                  } transition-colors duration-300`}
+                />
               </g>
             </svg>
           </button>
@@ -150,3 +186,13 @@ const Result = () => {
 };
 
 export default Result;
+
+const circleVariants = {
+  hovered: {
+    opacity: "1",
+    fill: "white",
+  },
+  idle: {
+    opacity: "0.25",
+  },
+};
