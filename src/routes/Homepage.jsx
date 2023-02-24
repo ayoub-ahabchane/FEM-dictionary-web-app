@@ -26,6 +26,7 @@ const Homepage = () => {
       </q>
       <a
         href="https://en.wikipedia.org/wiki/Ludwig_Wittgenstein"
+        target="_blank"
         className="order-4 font-bold text-secondary-400 transition-colors duration-300 focus-within:text-accent hover:text-accent md:text-lg"
       >
         Ludwig Wittgenstein
