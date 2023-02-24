@@ -50,7 +50,6 @@ const Searchbar = () => {
       />
       <button
         className="shrink-0"
-        role="button"
         type="submit"
         aria-label="Search definitions"
       >

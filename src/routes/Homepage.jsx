@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import openBook from "../assets/emoji_open_book.png";
 
 const Homepage = () => {
-  const { themeFont, setWord } = useContext(ThemeContext);
+  const { setWord } = useContext(ThemeContext);
   useEffect(() => {
     document.title = "Frontend Mentor Dictionary";
     setWord("");
