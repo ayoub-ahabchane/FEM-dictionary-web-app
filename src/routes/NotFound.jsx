@@ -19,6 +19,7 @@ const NotFound = ({ result: { title, message, resolution } }) => {
       <img
         className="order-1 mb-11 block aspect-square w-16 bg-contain"
         src={confusedFace}
+        alt=""
       ></img>
     </motion.section>
   );

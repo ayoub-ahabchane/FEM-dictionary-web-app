@@ -48,7 +48,12 @@ const Searchbar = () => {
           setIsValid(true);
         }}
       />
-      <button className="shrink-0" role="button" type="submit">
+      <button
+        className="shrink-0"
+        role="button"
+        type="submit"
+        aria-label="Search definitions"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"
