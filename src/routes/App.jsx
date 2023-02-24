@@ -40,15 +40,15 @@ function App() {
         </AnimatePresence>
       </main>
       <footer className="pb-6 text-center text-sm text-secondary-400">
-        A{" "}
+        Challenge by{" "}
         <a
           className="font-bold transition-colors duration-300 focus-within:text-accent hover:text-accent"
           href="https://www.frontendmentor.io"
           target="_blank"
         >
           Frontend Mentor
-        </a>{" "}
-        challenge by{" "}
+        </a>
+        . Coded by{" "}
         <a
           className="font-bold transition-colors duration-300 focus-within:text-accent hover:text-accent"
           href="https://www.frontendmentor.io/profile/ayoub-ahabchane"
