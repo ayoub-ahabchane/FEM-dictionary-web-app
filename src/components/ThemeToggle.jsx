@@ -58,9 +58,11 @@ const ThemeToggle = () => {
 
 const toggleVariants = {
   left: {
+    right: "auto",
     left: "3px",
   },
   right: {
+    left: "auto",
     right: "3px",
   },
 };
